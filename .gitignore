@@ -174,3 +174,4 @@ cython_debug/
 *.log
 
 # Python venv directory
+ds-algo-python-practice/*
