@@ -3,9 +3,9 @@
 # =============================================================================
 
 # Python 
-import unittest
 from io import StringIO
 import sys
+import unittest
 
 # Testing
 from sll import Node, LinkedList
