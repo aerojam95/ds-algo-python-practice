@@ -185,3 +185,29 @@ class BinarySearchTree():
                 current.value = self.min_value(current.right)
                 current.right = self._delete_node(current.right, current.value)
         return current
+    
+    def BFS(self) -> list[int]:
+        """Breadth-first search traversal of the binary search tree.
+
+        Returns:
+            list[int]: The values of the nodes in the tree in BFS order.
+        """
+        if not self.root:
+            return []
+        
+        current = self.root
+        queue = []
+        result = []
+        queue.append(current)
+        
+        while queue:
+            current = queue.pop(0)
+            result.append(current.value)
+            
+            if current.left:
+                queue.append(current.left)
+                
+            if current.right:
+                queue.append(current.right)
+                
+        return result

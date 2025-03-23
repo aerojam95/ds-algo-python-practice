@@ -124,6 +124,20 @@ class TestBinarySearchTree(unittest.TestCase):
         self.bst.delete_node(5)
         self.assertEqual(self.bst.root.left.value, 7)
         self.assertIsNone(self.bst.root.left.left)  # 3 was deleted earlier
+        
+    def test_bfs_traversal(self):
+        """Test breadth-first search traversal returns correct order."""
+        # Tree structure:
+        #        10
+        #       /  \\
+        #      5    15
+        #     / \\     \\
+        #    3   7     20
+        for val in [10, 5, 15, 3, 7, 20]:
+            self.bst.insert(val)
+
+        expected_bfs = [10, 5, 15, 3, 7, 20]
+        self.assertEqual(self.bst.BFS(), expected_bfs)
 
 if __name__ == '__main__':
     unittest.main()
