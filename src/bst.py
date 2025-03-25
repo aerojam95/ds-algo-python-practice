@@ -211,3 +211,63 @@ class BinarySearchTree():
                 queue.append(current.right)
                 
         return result
+    
+    def dfs_pre_order(self) -> list[int]:
+        """Depth-first search pre-order traversal of the binary search tree. Goes root, left, right. Down the left side of the tree first. 
+
+        Returns:
+            list[int]: The values of the nodes in the tree in DFS pre-order.
+        """
+        results = []
+        
+        def traverse(current: "Node") -> None:
+            results.append(current.value)
+            if current.left:
+                traverse(current.left)
+            if current.right:
+                traverse(current.right)
+        
+        if self.root:   
+            traverse(self.root)
+        
+        return results
+    
+    def dfs_post_order(self) -> list[int]:
+        """Depth-first search post-order traversal of the binary search tree. Goes left, right, root. Down the left side of the tree first. 
+
+        Returns:
+            list[int]: The values of the nodes in the tree in DFS post-order.
+        """
+        results = []
+        
+        def traverse(current: "Node") -> None:
+            if current.left:
+                traverse(current.left)
+            if current.right:
+                traverse(current.right)
+            results.append(current.value)
+            
+        if self.root:
+            traverse(self.root)
+            
+        return results
+    
+    def dfs_in_order(self) -> list[int]:
+        """Depth-first search in-order traversal of the binary search tree. Goes left, root, right. Down the left side of the tree first. 
+
+        Returns:
+            list[int]: The values of the nodes in the tree in DFS in-order.
+        """
+        results = []
+        
+        def traverse(current: "Node") -> None:
+            if current.left:
+                traverse(current.left)
+            results.append(current.value)
+            if current.right:
+                traverse(current.right)
+                
+        if self.root:
+            traverse(self.root)
+            
+        return results

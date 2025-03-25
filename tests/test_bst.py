@@ -138,6 +138,45 @@ class TestBinarySearchTree(unittest.TestCase):
 
         expected_bfs = [10, 5, 15, 3, 7, 20]
         self.assertEqual(self.bst.BFS(), expected_bfs)
+        
+    def test_pre_order(self):
+        """Test breadth-first search traversal returns correct order."""
+        # Tree structure:
+        #        10
+        #       /  \\
+        #      5    15
+        #     / \\     \\
+        #    3   7     20
+        for val in [10, 5, 15, 2, 7, 20]:
+            self.bst.insert(val)
+        expected_pre_order = [10, 5, 2, 7, 15, 20]
+        self.assertEqual(self.bst.dfs_pre_order(), expected_pre_order)
+
+    def test_in_order(self):
+        """Test breadth-first search traversal returns correct order."""
+        # Tree structure:
+        #        10
+        #       /  \\
+        #      5    15
+        #     / \\     \\
+        #    3   7     20
+        for val in [10, 5, 15, 2, 7, 20]:
+            self.bst.insert(val)
+        expected_in_order = [2, 5, 7, 10, 15, 20]
+        self.assertEqual(self.bst.dfs_in_order(), expected_in_order)
+
+    def test_post_order(self):
+        """Test breadth-first search traversal returns correct order."""
+        # Tree structure:
+        #        10
+        #       /  \\
+        #      5    15
+        #     / \\     \\
+        #    3   7     20
+        for val in [10, 5, 15, 2, 7, 20]:
+            self.bst.insert(val)
+        expected_post_order = [2, 7, 5, 20, 15, 10]
+        self.assertEqual(self.bst.dfs_post_order(), expected_post_order)
 
 if __name__ == '__main__':
     unittest.main()
