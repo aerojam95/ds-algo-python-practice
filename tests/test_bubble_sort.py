@@ -13,7 +13,11 @@ from bubble_sort import bubble_sort
 # =============================================================================
 
 class TestBubbleSort(unittest.TestCase):
-    """Unit tests for the Bubble sort algorithm."""
+    """Unit tests for the Bubble sort algorithm.
+    
+    Args:
+        unittest (_type_): The unittest module.
+    """
 
     def test_unsorted_list(self):
         self.assertEqual(bubble_sort([4, 2, 5, 1, 3]), [1, 2, 3, 4, 5])
