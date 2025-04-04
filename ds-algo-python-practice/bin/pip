@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/mnt/d/Google Drive/Documents/Professional projects/ds-algo-python-practice/ds-algo-python-practice/bin/python3" "$0" "$@"
+'''exec' "/mnt/d/Google Drive/Documents/Education/Programming/ds-algo-python-practice/ds-algo-python-practice/bin/python3.11" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
